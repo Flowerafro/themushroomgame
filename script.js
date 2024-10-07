@@ -26,15 +26,20 @@ mushrooms.map(mushroom => {
 
 // Whats in the booox?
 basket.addEventListener('click', () => {
-    basket.innerHTML = '<div class="mushroom"></div>';
-    basketContent.map(item => {
-        const mushroomDiv = document.createElement('div');
-        mushroomDiv.className = 'mushroom';
-        mushroomDiv.innerHTML = item.content;
-        basket.appendChild(mushroomDiv);
+    if (basketContent.length === 0) {
+        alert('Kurven din er tom. Plukk sopp først!');
+        return;
+    } else {
+        basket.innerHTML = '<div class="mushroom"></div>';
+        basketContent.map(item => {
+            const mushroomDiv = document.createElement('div');
+            mushroomDiv.className = 'mushroom';
+            mushroomDiv.innerHTML = item.content;
+            basket.appendChild(mushroomDiv);
+        });
+        displayScore();
+    }
 
-    });
-    displayScore();
 });
 
 // display score: how many poisonous and non-poisonous mushrooms?
@@ -45,12 +50,19 @@ function displayScore() {
     basketContent.map(mushroom => {
         if (mushroom.id === 'poison') {
             poisonCount++;
+
         } else if (mushroom.id === 'notpoison') {
             notPoisonCount++;
         }
+        score.innerHTML = `<div class="score-count">Du har plukket ${poisonCount} giftig sopp og ${notPoisonCount} ikke-giftig sopp</div>`;
     });
+    if (poisonCount += 1) {
+        const throwOut = document.getElementById("throw-out");
+        throwOut.innerHTML = `<p>Å nei, du må kaste alt! Når du har giftig sopp i kurven din, kan du ikke spise noen har de du har plukket..</p>`;
 
-    score.innerHTML = `
-        <div class="score-count">Du har plukket ${poisonCount} giftig sopp og ${notPoisonCount} ikke-giftig sopp</div>
-    `;
+    }
+    if (poisonCount === 0 || notPoisonCount > 0) {
+        const throwOut = document.getElementById("throw-out");
+        throwOut.innerHTML = `<p>Gratulerer! Du har plukket gift-fri sopp og kan spise den!</p>`;
+    }
 }
