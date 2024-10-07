@@ -10,7 +10,7 @@ html {
 
 .wrap-intro {
 
-    background-image: url(IMG/forest.png);
+    background-image: url(IMG/tree-silouette.png);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,23 +99,6 @@ html {
     padding: 1rem;
 }
 
-.intro-btn {
-    width: 100px;
-    height: 50px;
-    background-color: transparent;
-    border: white 2px solid;
-    border-radius: 5px;
-}
-
-.intro-btn:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
-}
-
-.intro-btn a {
-    text-decoration: none;
-    color: white;
-}
 
 
 
