@@ -56,13 +56,10 @@ function displayScore() {
         }
         score.innerHTML = `<div class="score-count">Du har plukket ${poisonCount} giftig sopp og ${notPoisonCount} ikke-giftig sopp</div>`;
     });
-    if (poisonCount += 1) {
-        const throwOut = document.getElementById("throw-out");
+    const throwOut = document.getElementById("throw-out");
+    if (poisonCount > 0) {
         throwOut.innerHTML = `<p>Å nei, du må kaste alt! Når du har giftig sopp i kurven din, kan du ikke spise noen har de du har plukket..</p>`;
-
-    }
-    if (poisonCount === 0 || notPoisonCount > 0) {
-        const throwOut = document.getElementById("throw-out");
+    } else {
         throwOut.innerHTML = `<p>Gratulerer! Du har plukket gift-fri sopp og kan spise den!</p>`;
     }
 }
