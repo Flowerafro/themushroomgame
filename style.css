@@ -132,7 +132,12 @@ html {
     transition: 0.5s;
 }
 
-/* -------------INTRO 2----------- */
+.text-box {
+    background-color: #fff;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 5px;
+}
 
 /* -------------Mushroom path----------- */
 
@@ -193,6 +198,26 @@ html {
     width: 100%;
     height: auto
 }
+
+#basket img {
+    cursor: pointer;
+}
+
+/* ------------  SCORE  ----------- */
+
+#score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#score .score-count {
+    background-color: orange;
+    width: fit-content;
+    padding: 2rem;
+}
+
 /* ------------  Throw out  ----------- */
 
 #throw-out {
@@ -204,16 +229,6 @@ html {
 
     width: 100%;
     height: 50vh;
-}
-
-
-/* ------------  SCORE  ----------- */
-
-#score {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* ---------- Read More -------------- */
