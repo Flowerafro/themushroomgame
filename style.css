@@ -10,7 +10,7 @@ html {
 
 .wrap-intro {
 
-    background-image: url(forest.png);
+    background-image: url(IMG/forest.png);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -141,7 +141,7 @@ html {
     background-position: center;
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-image: url("fluesopp.png");
+    background-image: url("IMG/fluesopp.png");
 }
 
 #fluesopp:hover {

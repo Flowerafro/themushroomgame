@@ -1,7 +1,7 @@
 /* -------------Mushroom path----------- */
 
 #mushroom-path {
-    background-image: url("path.png");
+    background-image: url("IMG/path.png");
     background-attachment: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@
     background-position: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("house.png");
+    background-image: url("IMG/house.png");
 }
 
 /* ------------  BASKET  ----------- */
