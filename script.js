@@ -11,6 +11,22 @@ const basketContent = [];
 let poisonCount = 0;
 let notPoisonCount = 0;
 
+// Array for mushroom data - må fylles på med flere sopp - skal være grunnlaget for å generere html-elementer via js i stedet for å skrive de ut manuelt i html
+const mushroomData = [
+    {
+        id: "notpoison",
+        src: "IMG/fungi.png",
+        type: "Steinsopp",
+        alt: "notpoison"
+    },
+    {
+        id: "poison",
+        src: "IMG/fluesopp.png",
+        type: "Fluesopp",
+        alt: "poison"
+    }
+]
+
 
 // klikk og legg til sopp i kurven
 mushrooms.map(mushroom => {
