@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.wrap-intro {
+
+    background-image: url(forest.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
+
+    padding: 2rem;
+
+    font-family: Arial, sans-serif;
+}
+
+/* ------------ text boxes ------ */
+
+
+/* -------------INTRO FLUESOPP----------- */
+#intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+}
+
+#intro-container {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro h1 {
+    font-size: 40px;
+    color: white;
+    background-color: #000;
+} 
+
+#intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    width: 60%;
+    height: auto;
+
+    text-align: center;
+}
+
+#intro-btn {
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    margin-top: 2rem;
+}
+
+#intro-btn a {
+    text-decoration: none;
+    color: red;
+}
+/* class på <p> innsatt i intro-text div av JS */
+
+.intro-text-div {
+   
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.intro-text-div p {
+    font-size: 30px;
+    color: white;
+    background-color: #000;
+    padding: 1rem;
+}
+
+.intro-btn {
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: white 2px solid;
+    border-radius: 5px;
+}
+
+.intro-btn:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.intro-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transition: 0.5s;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 300ms ease-in;
+}
+
+#fluesopp {
+    width: 100px;
+    height: 150px;
+    cursor: pointer;
+    background-attachment: center;
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url("fluesopp.png");
+}
+
+#fluesopp:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+/* -------------INTRO 2----------- */
+
