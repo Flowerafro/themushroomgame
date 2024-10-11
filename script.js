@@ -1,6 +1,6 @@
 const intro = document.getElementById("wrap-intro");
 const mushroomPath = document.getElementById("mushroom-path");
-const home = document.getElementById("home");
+
 const basket = document.getElementById("basket");
 const basketimg = document.getElementById("basket-img");
 const basketfill = document.getElementById("basket-fill");
@@ -101,6 +101,7 @@ function generateMushroomElements() {
     });
 }
 generateMushroomElements();
+
 
 /* Klikk på soppkurven skal vise: innholdet i kurven og artikkel, feilmeld om kurven er tom, og fjerne spillet (da er spillet over)*/
 basket.addEventListener('click', () => {

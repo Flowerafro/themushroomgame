@@ -97,14 +97,15 @@ html {
 
 /* -------------Mushroom path----------- */
 .path-text-div {
+    background-color: #000;
+
     width: 100%;
-    height: 150vh;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #000;
 
     font-family: Arial, sans-serif;
 }
@@ -116,12 +117,27 @@ html {
 }
 
 
+#mushroom-path-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000;
+
+    width: 100%;
+    height: auto;
+
+    padding: 5rem;
+}
+
 #mushroom-path {
     background-image: url("IMG/aviewforest.jpg");
     background-attachment: fixed;
     background-position: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: transparent;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -131,20 +147,18 @@ html {
     width: 100%;
     height: 200vh;
 
-    border: 3px red solid;
+    padding: 5rem 2rem;
 }
 
 .mushroom {
-    padding-bottom: 2rem;
-
-    border: 3px green solid;
+    padding: 1rem;
 }
 
 .mushroom img {
     cursor: pointer;
 
-    width: auto;
-    height: 150px;
+    width: 150px;
+    height: auto;
     object-fit: cover;
 }
 
