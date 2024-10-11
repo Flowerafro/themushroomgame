@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -8,8 +8,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.wrap-intro {
-
+#wrap-intro {
     background-image: url(IMG/tree-silouette.png);
     background-attachment: fixed;
     background-position: center;
@@ -43,78 +42,14 @@ html {
     height: 100vh;
 }
 
-#intro-container {
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 #intro h1 {
     font-size: 40px;
-    color: white;
-    background-color: #000;
-} 
-
-#intro-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    width: 60%;
-    height: auto;
-
+    letter-spacing: 1px;
     text-align: center;
-}
-
-#intro-btn {
-    font-size: 40px;
-    background-color: transparent;
-    border: none;
-    margin-top: 2rem;
-}
-
-#intro-btn a {
-    text-decoration: none;
-    color: red;
-}
-/* class på <p> innsatt i intro-text div av JS */
-
-.intro-text-div {
-   
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.intro-text-div p {
-    font-size: 30px;
     color: white;
     background-color: #000;
     padding: 1rem;
-}
-
-
-
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transition: 0.5s;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.fade-in {
-    animation: fadeIn 300ms ease-in;
-}
+} 
 
 #fluesopp {
     width: 100px;
@@ -132,58 +67,85 @@ html {
     transition: 0.5s;
 }
 
-.text-box {
-    background-color: #fff;
-    width: fit-content;
-    padding: 1rem;
-    border-radius: 5px;
-}
-
-/* -------------Mushroom path----------- */
-
-#mushroom-path {
-    background-image: url("IMG/path.png");
-    background-attachment: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+#intro-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
 
-    width: 100%;
+    width: 60%;
     height: auto;
+
+    text-align: center;
 }
 
-.mushroom {
-    margin: 10px;
-    cursor: pointer;
-    background-attachment: center;
-    background-position: center;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-}
-
-/* ------------  HOME  ----------- */
-
-#home {
+.intro-text-div {
     width: 100%;
     height: 100vh;
 
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.intro-text-div p {
+    font-size: 30px;
+    color: white;
+    background-color: #000;
+    padding: 1rem;
+}
+
+/* -------------Mushroom path----------- */
+.path-text-div {
+    width: 100%;
+    height: 150vh;
 
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: space-around;
     align-items: center;
+    background-color: #000;
 
-    background-attachment: center;
+    font-family: Arial, sans-serif;
+}
+
+.path-text-div h2 {
+    font-size: 30px;
+    color: white;
+    padding: 1rem;
+}
+
+
+#mushroom-path {
+    background-image: url("IMG/aviewforest.jpg");
+    background-attachment: fixed;
     background-position: cover;
-    background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("IMG/home.png");
+    background-size: cover;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem 13rem;
+
+    width: 100%;
+    height: 200vh;
+
+    border: 3px red solid;
+}
+
+.mushroom {
+    padding-bottom: 2rem;
+
+    border: 3px green solid;
+}
+
+.mushroom img {
+    cursor: pointer;
+
+    width: auto;
+    height: 150px;
+    object-fit: cover;
 }
 
 /* ------------  BASKET  ----------- */
@@ -193,14 +155,58 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 
     width: 100%;
-    height: auto
+    height: auto;
+    padding: 2rem;
 }
 
-#basket img {
+#basket h3 {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+#basket-img {
     cursor: pointer;
+}
+
+#basket-img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.basket-tilt {
+    animation: basket-tilt 1s ease-in-out;
+}
+
+@keyframes basket-tilt {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(90deg);
+    }
+    90% {
+        transform: rotate(90deg);
+        }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.basket-outer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+}
+
+#basket-fill {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
 }
 
 /* ------------  SCORE  ----------- */
@@ -218,35 +224,54 @@ html {
     padding: 2rem;
 }
 
-/* ------------  Throw out  ----------- */
+/* ---------- Mushroom info -------------- */
 
-#throw-out {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-
-    width: 100%;
-    height: 50vh;
-}
-
-/* ---------- Read More -------------- */
-
-#read-more {
+#mushroom-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: lightgrey;
 
+    max-width: min(96%, 1000px);
+    height: auto;
+}
+
+.mushroom-data {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 2em;  
+    border: 3px black solid;
+
     width: 100%;
-    height: 50vh;
+}
+
+.mushroom-data div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    font-family: Arial, sans-serif;
+
+    border: green 2px solid;
+
+}
+
+.mushroom-data img {
+    width: auto;
+    height: 200px;
+    margin: 10px;
+    object-fit: cover;
+
+    border: 3px black solid;
 }
 
 /* ---------- Article  -------------- */
 
-#article {
+.article {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -255,9 +280,9 @@ html {
     background-color: grey;
 
     width: 100%;
-    height: 50vh;
+    height: auto;
 }
 
-#article p {
+.article p {
     width: 80%;
 }

@@ -10,76 +10,65 @@
 </head>
 
 <body>
-    <div class="wrap-intro">
+    <section id="wrap-intro">
         <div id="intro">
             <a href="#intro-text">
                 <div id="fluesopp"></div>
             </a>
-            <h1>Du kjenner nok denne..</h1>
-            <div id="intro-container"></div>
-
+            <!-- <h1>Du kjenner nok denne..</h1> -->
+            <h1>En tur i skogen kan fort<br>bli giftig</h1>
         </div>
         <div id="intro-text">
             <div class="intro-text-div">
-                <p id="intro-text-1" class="intro-text">.. har du tenkt over at en sopptur ligner ekstremsport?</p>
+                <p class="intro-text">Ifølge Giftinformasjonen har det i år vært en økning av alvorlig
+                    forgiftning forårsaket av sopp..</p>
+                <!-- <p class="intro-text">.. har du tenkt over at en sopptur ligner ekstremsport?</p> -->
             </div>
 
             <div class="intro-text-div">
-                <p id="intro-btn-2" class="intro-text">Bli med på sopptur!</p>
+                <p class="intro-text">..og flere forgiftninger skyldes at folk har forvekslet en giftig sopp med
+                    ikke-giftig sopp.</p>
             </div>
 
             <div class="intro-text-div">
-                <p id="intro-btn-3" class="intro-text">Plukk kun spiselig sopp i kurven og prøv å ikke bli forgiftet!
+                <p class="intro-text">En uskyldig kantarell kan enkelt forveksles med den giftige spiss giftslørsoppen.
                 </p>
             </div>
+
         </div>
-    </div>
 
-    <!--  bilder er placeholders og skal erstattes med bilder av flere typer sopp  -->
-    <div id="mushroom-path">
-        <div class="mushroom" id="notpoison"><img src="IMG/steinsopp.png" alt="sopp" width="100" height="100"></div>
-        <div class="mushroom" id="poison"><img src="IMG/flatklokkehatt.png" alt="sopp" width="100" height="100"></div>
-        <div class="mushroom" id="notpoison"><img src="IMG/steinsopp.png" alt="sopp" width="100" height="100"></div>
-        <div class="mushroom" id="poison"><img src="IMG/hvitfluesopp.png" alt="sopp" width="100" height="100"></div>
-
-        <div class="text-box">Som sagt, denne kjenner du nok:</div>
-        <div class="mushroom" id="poison"><img src="IMG/spissgiftslorsopp.png" alt="sopp" width="100" height="100">
         </div>
-        <div class="mushroom" id="notpoison"><img src="IMG/fungi.png" alt="sopp" width="100" height="100"></div>
-        <div class="mushroom" id="poison"><img src="IMG/flatklokkehatt.png" alt="sopp" width="100" height="100"></div>
-        <div class="text-box">Oisann! Hvilken av disse? <br>Den ene er god til middag og den andre kan være
-            dødelig...</div>
-        <div class="mushroom" id="notpoison"><img src="IMG/steinsopp.png" alt="sopp" width="100" height="100"></div>
-        <div class="mushroom" id="poison"><img src="IMG/spissgiftslorsopp.png" alt="sopp" width="100" height="100">
+    </section>
+
+    <section class="path-text-div">
+        <h2>Prøv selv! <br><br> Plukk de soppene du tror er trygge å spise.
+        </h2>
+    </section>
+    <section id="mushroom-path">
+        <!-- Her genereres inn sopp fra Js -->
+    </section>
+
+    </div>
+
+    <section class="path-text-div">
+        <h2> Bra! La oss se hvilken sopp som du har plukket som er giftig og ikke giftig.
+        </h2>
+        <div id="basket">
+            <h3 id="basket-text"> Her er kurven din</h2>
+                <div class="basket-outer">
+                    <img src="IMG/basket.png" alt="basket" id="basket-img" width="300" height="300">
+                    <div id="basket-fill"></div>
+                </div>
         </div>
-    </div>
+    </section>
 
-    <div id="home">
-        <div class="house"></div>
-    </div>
 
-    <div id="basket">
-        <h2 class="text-box">Du er hjemme! La oss se i kurven din.. (Klikk på kurven)</h2>
-        <img src="IMG/basket.png" alt="basket" width="300" height="300">
-    </div>
-    <div id="score"></div>
+    <!--  <div id="score"></div> -->
 
-    <div id="throw-out">
-        <!-- <p>Å nei, du må kaste alt!</p>
-        <p>Når du har giftig sopp i kurven din, kan du ikke spise noen har de du har plukket..</p> -->
+    <div id="mushroom-info">
+
     </div>
-    <div id="read-more">
-        <p>info om sopp som er plukket</p>
-        <p>giftig</p>
-        <p>ikke giftig</p>
-    </div>
-    <div id="article">
-        <h2>Artikkel tittel</h2>
-        <h3>undertittel</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam asperiores inventore laudantium molestias
-            cupiditate ullam labore accusamus, eum enim assumenda, reiciendis mollitia tempora ratione incidunt
-            suscipit saepe distinctio dolorum quia esse facilis? Dolore necessitatibus nobis soluta inventore facere
-            consequuntur nam adipisci sunt quisquam iure modi, assumenda earum sit eius minus!</p>
+    <div id="article" class="article">
     </div>
 
     <script src="script.js"></script>
