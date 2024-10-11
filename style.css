@@ -8,6 +8,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: Arial, sans-serif;
+}
+
 #wrap-intro {
     background-image: url(IMG/tree-silouette.png);
     background-attachment: fixed;
@@ -15,17 +19,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: auto;
-
     padding: 2rem;
-
-    font-family: Arial, sans-serif;
 }
 
 /* ------------ text boxes ------ */
@@ -96,26 +90,6 @@ html {
 }
 
 /* -------------Mushroom path----------- */
-.path-text-div {
-    background-color: #000;
-
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
-    font-family: Arial, sans-serif;
-}
-
-.path-text-div h2 {
-    font-size: 30px;
-    color: white;
-    padding: 1rem;
-}
-
 
 #mushroom-path-section {
     display: flex;
@@ -128,8 +102,64 @@ html {
     width: 100%;
     height: auto;
 
-    padding: 5rem;
+    padding: 1rem;
+
 }
+
+.mushroom-path-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50vh;
+
+    padding: 1rem;
+}
+
+#mushroom-path-section h2 {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid orange;
+}
+
+#mushroom-path-section p {
+    font-size: 25px;
+    text-align: center;
+    line-height: 2rem;
+    color: white;
+}
+
+.counter-box {
+    position: sticky;
+    top: 100px;
+    right: 10px;
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.counter-box:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.counter-box span {
+    color: white;
+    padding: 15px;
+    font-size: 50px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 10%); 
+}
+
+
 
 #mushroom-path {
     background-image: url("IMG/aviewforest.jpg");
@@ -162,11 +192,41 @@ html {
     object-fit: cover;
 }
 
+.mushroom img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(8px 8px 10px orange);
+    transition: 0.5s;
+}
+
+.path-text-div {
+    background-color: #000;
+
+    width: 100%;
+    height: auto;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.path-text-div h2 {
+    width: 60%;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+
 /* ------------  BASKET  ----------- */
 
 #basket {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
 
@@ -176,9 +236,12 @@ html {
 }
 
 #basket h3 {
-    font-family: Arial, sans-serif;
+    width: 60%;
     color: white;
+    font-size: 25px;
+    line-height: 2rem;
     text-align: center;
+    margin-top: 2rem;
 }
 
 #basket-img {
@@ -223,65 +286,40 @@ html {
     align-items: center;
 }
 
-/* ------------  SCORE  ----------- */
-
-#score {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#score .score-count {
-    background-color: orange;
-    width: fit-content;
-    padding: 2rem;
-}
 
 /* ---------- Mushroom info -------------- */
 
 #mushroom-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: lightgrey;
-
-    max-width: min(96%, 1000px);
-    height: auto;
-}
-
-.mushroom-data {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 2em;  
-    border: 3px black solid;
-
+    flex-wrap: wrap; 
     width: 100%;
+    height: auto;
+    border: 3px solid blue;
 }
 
-.mushroom-data div {
+.mushroom-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    width: 100%;
-
-    font-family: Arial, sans-serif;
-
-    border: green 2px solid;
-
 }
 
-.mushroom-data img {
+.mushroom-card img {
     width: auto;
     height: 200px;
-    margin: 10px;
     object-fit: cover;
-
-    border: 3px black solid;
 }
+
 
 /* ---------- Article  -------------- */
 

@@ -1,5 +1,6 @@
 const intro = document.getElementById("wrap-intro");
-const mushroomPath = document.getElementById("mushroom-path");
+const counter = document.getElementById("counter");
+const mushroomPath = document.getElementById("mushroom-path-section");
 
 const basket = document.getElementById("basket");
 const basketimg = document.getElementById("basket-img");
@@ -11,59 +12,74 @@ const article = document.getElementById("article");
 // tom array for soppkurven
 const basketContent = [];
 // tom arrays for giftig og ikke-giftig sopp
+let count = 0;
 let poisonCount = 0;
 let notPoisonCount = 0;
 
 // Array for mushroom data - skal være grunnlaget for å generere html-elementer via js i stedet for å skrive de ut manuelt i html
 const mushroomData = [
     {
-        id: "poison",
+        id: 1,
+        type: "poison",
         src: "IMG/fluesopp.png",
-        type: "Fluesopp",
+        name: "Fluesopp",
         info: "info om fluesopp",
         alt: "fluesopp"
     },
     {
-        id: "poison",
+        id: 2,
+        type: "poison",
         src: "IMG/hvitfluesopp.png",
-        type: "Hvit fluesopp",
+        name: "Hvit fluesopp",
         info: "info om hvit fluesopp",
         alt: "hvitfluesopp"
     },
     {
-        id: "poison",
+        id: 3,
+        type: "poison",
         src: "IMG/spissgiftslorsopp.png",
-        type: "Spiss Giftslørsopp",
+        name: "Spiss Giftslørsopp",
+        info: "info om hvit spillslørsopp",
         alt: "spissgiftslorsopp"
     },
     {
-        id: "poison",
+        id: 4,
+        type: "poison",
         src: "IMG/flatklokkehatt.png",
-        type: "Flatklokkehatt",
+        name: "Flatklokkehatt",
+        info: "info om hvit flatklokkehatt",
         alt: "flatklokkehatt"
     },
     {
-        id: "notpoison",
+        id: 5,
+        type: "notpoison",
         src: "IMG/steinsopp.png",
-        type: "Steinsopp",
+        name: "Steinsopp",
+        info: "info om hvit steinsopp",
         alt: "steinsopp"
     },
     {
-        id: "notpoison",
+        id: 6,
+        type: "notpoison",
         src: "IMG/kantarell.png",
-        type: "kantarell",
+        name: "kantarell",
+        info: "info om kantarell",
         alt: "kantarell"
     },
     {
-        id: "notpoison",
+        id: 7,
+        type: "notpoison",
         src: "IMG/ametystsopp.png",
-        type: "Ametystsopp",
+        name: "Ametystsopp",
+        info: "info om ametystsopp",
         alt: "ametystsopp"
     },
     {
-        id: "notpoison",
+        id: 8,
+        type: "notpoison",
         src: "IMG/fungi.png",
-        type: "Matsopp",
+        name: "Matsopp",
+        info: "info om matsopp",
         alt: "mat-sopp"
     },
 ];
@@ -81,7 +97,8 @@ function generateMushroomElements() {
     randomMushroom.map(mushroom => {
         const mushroomImg = document.createElement('div');
         mushroomImg.className = 'mushroom';
-        mushroomImg.id = mushroom.type;
+        mushroomImg.id = mushroom.id;
+        mushroomImg.type = mushroom.type;
 
 
         mushroomImg.innerHTML = `<img src="${mushroom.src}" alt="${mushroom.alt}">`;
@@ -96,8 +113,10 @@ function generateMushroomElements() {
         mushroom.addEventListener('click', () => {
             basketContent.push({
                 id: mushroom.id,
+                type: mushroom.type,
                 content: mushroom.innerHTML
             });
+            counter.innerHTML = basketContent.length; /* teller antall sopp du har plukket */
             mushroom.style.display = 'none';
             console.log(basketContent);
         });
@@ -105,17 +124,26 @@ function generateMushroomElements() {
 }
 generateMushroomElements();
 
+/* Funksjon som henter info til mushroom-info */
+
+function getMushroomData(basketContent) {
+    return mushroomData.filter(mushroom => {
+        return basketContent.some(item => item.content.includes(mushroom.src));
+    });
+}
 
 /* Klikk på soppkurven skal vise: innholdet i kurven og artikkel, feilmeld om kurven er tom, og fjerne spillet (da er spillet over)*/
 basket.addEventListener('click', () => {
     if (basketContent.length === 0) {
-        alert('Kurven din er tom. Plukk sopp først!');
+        alert('ops! Ser ut som at du må tilbake til skogs og plukke sopp før vi kan sjekke kurven din!');
         return;
     } else {
         intro.style.display = 'none';
         mushroomPath.style.display = 'none';
+
         basketimg.classList.add('basket-tilt');
-        basketfill.innerHTML = ''; // Clear the basket fill content
+        basketfill.innerHTML = '';
+
         basketContent.map(item => {
             const mushroomDiv = document.createElement('div');
             mushroomDiv.className = 'mushroom';
@@ -123,18 +151,34 @@ basket.addEventListener('click', () => {
             basketfill.appendChild(mushroomDiv);
         });
 
-        mushroomInfo.innerHTML = '<h2>Info om soppen du har plukket:</h2>';
+        mushroomInfo.innerHTML = getMushroomData(basketContent).map(mushroom => {
+            return `<div class="mushroom">
+                <img src="${mushroom.src}" alt="${mushroom.alt}">
+                <h3>${mushroom.name}</h3>
+                <p>${mushroom.info}</p>
+                <p>${mushroom.type}</p>
+            </div>`;
+        }).join('');
 
-        article.innerHTML = `<h2>Artikkel tittel</h2>
+        /* Fjerner gammel klasse og legger til ny */
+        const mushroomElements = mushroomInfo.querySelectorAll('.mushroom');
+        mushroomElements.forEach(mushroom => {
+            mushroom.classList.remove('mushroom');
+            mushroom.classList.add('mushroom-card');
+        });
+
+        /* article.innerHTML = `<h2>Artikkel tittel</h2>
         <h3>undertittel</h3>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam asperiores inventore laudantium molestias
             cupiditate ullam labore accusamus, eum enim assumenda, reiciendis mollitia tempora ratione incidunt
             suscipit ofte distinctio dolorum quia esse facilis? Dolore necessitatibus nobis soluta inventore facere
             consequuntur nam adipisci sunt quisquam iure modi, assumenda earum sit eius minus!</p>`;
-        article.classList.add('article');
+        article.classList.add('article'); */
+
+        /* displayMushroomData(); */
 
         displayScore();
-        displayMushroomData();
+
     }
 });
 
@@ -144,39 +188,19 @@ function displayScore() {
     notPoisonCount = 0;
 
     basketContent.map(mushroom => {
-        if (mushroom.id === 'poison') {
+        if (mushroom.type === 'poison') {
             poisonCount++;
-        } else if (mushroom.id === 'notpoison') {
+        } else if (mushroom.type === 'notpoison') {
             notPoisonCount++;
         }
     });
     // if else som bestemmer om basket-text skal vise om du kan spise soppen eller ikke
     if (poisonCount > 0) {
-        baskettext.innerHTML = `<p>Å nei, du må kaste alt! <br> Når du har giftig sopp i kurven din, kan du ikke spise noen har de du har plukket..</p>`;
+        baskettext.innerHTML = `<p>Å nei, du må kaste alt! <br> Når du har giftig sopp i kurven din, kan du ikke spise noen har de du har plukket..</p>
+        <p>Du har plukket ${poisonCount} giftige sopp og ${notPoisonCount} ikke-giftig sopp</p>`;
     } else {
-        baskettext.innerHTML = `<p>Gratulerer! Du har plukket gift-fri sopp og kan spise den!</p>`;
+        baskettext.innerHTML = `<p>Gratulerer! Du har plukket gift-fri sopp og kan spise den!</p
+        <p>Du har plukket ${poisonCount} giftige sopp og ${notPoisonCount} ikke-giftig sopp</p>`;
     }
 }
 
-/* funksjon som legger inn soppen du kan plukken og info om den inn i "info om sopp" / read more section
-// .map for å løpe gj basketContent, .find finner riktig sopp, if-statement legger til bilde og info il mathcende sopp */
-
-function displayMushroomData() {
-    const mushroomDataDiv = document.createElement('div');
-    mushroomDataDiv.className = 'mushroom-data';
-
-    basketContent.map(mushroom => {
-        const mushroomInfo = mushroomData.find(data => data.type === mushroom.id);
-        console.log(mushroom.id, mushroomInfo);
-        if (mushroomInfo) {
-            const mushroomDiv = document.createElement('div');
-            mushroomDiv.innerHTML = `
-            <img src="${mushroomInfo.src}" alt="${mushroomInfo.alt}">
-            <h3>${mushroomInfo.type}</h3>
-            `;
-            mushroomDataDiv.appendChild(mushroomDiv);
-        }
-    });
-
-    mushroomInfo.appendChild(mushroomDataDiv);
-}
