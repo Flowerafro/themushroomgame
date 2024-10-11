@@ -20,12 +20,14 @@ const mushroomData = [
         id: "poison",
         src: "IMG/fluesopp.png",
         type: "Fluesopp",
+        info: "info om fluesopp",
         alt: "fluesopp"
     },
     {
         id: "poison",
         src: "IMG/hvitfluesopp.png",
         type: "Hvit fluesopp",
+        info: "info om hvit fluesopp",
         alt: "hvitfluesopp"
     },
     {
@@ -79,7 +81,8 @@ function generateMushroomElements() {
     randomMushroom.map(mushroom => {
         const mushroomImg = document.createElement('div');
         mushroomImg.className = 'mushroom';
-        mushroomImg.id = mushroom.id;
+        mushroomImg.id = mushroom.type;
+
 
         mushroomImg.innerHTML = `<img src="${mushroom.src}" alt="${mushroom.alt}">`;
         mushroomParent.appendChild(mushroomImg);
@@ -112,7 +115,7 @@ basket.addEventListener('click', () => {
         intro.style.display = 'none';
         mushroomPath.style.display = 'none';
         basketimg.classList.add('basket-tilt');
-        basketfill.innerHTML = '<div class="mushroom"></div>';
+        basketfill.innerHTML = ''; // Clear the basket fill content
         basketContent.map(item => {
             const mushroomDiv = document.createElement('div');
             mushroomDiv.className = 'mushroom';
@@ -163,13 +166,15 @@ function displayMushroomData() {
     mushroomDataDiv.className = 'mushroom-data';
 
     basketContent.map(mushroom => {
-        const mushroomInfo = mushroomData.find(data => data.id === mushroom.id);
+        const mushroomInfo = mushroomData.find(data => data.type === mushroom.id);
+        console.log(mushroom.id, mushroomInfo);
         if (mushroomInfo) {
-            mushroomDataDiv.innerHTML += `
-            <div>
+            const mushroomDiv = document.createElement('div');
+            mushroomDiv.innerHTML = `
             <img src="${mushroomInfo.src}" alt="${mushroomInfo.alt}">
             <h3>${mushroomInfo.type}</h3>
-            </div>`;
+            `;
+            mushroomDataDiv.appendChild(mushroomDiv);
         }
     });
 
