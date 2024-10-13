@@ -10,76 +10,61 @@
 </head>
 
 <body>
-    <section id="wrap-intro">
+    <section id="wrap-mushroom-path">
         <div id="intro">
-            <a href="#intro-text">
-                <div id="fluesopp"></div>
-            </a>
-            <!-- <h1>Du kjenner nok denne..</h1> -->
-            <h1>En tur i skogen kan fort<br>bli giftig</h1>
+            <h1>En tur ut i skogen kan fort
+                <hr><span>bli giftig</span>
+            </h1>
         </div>
         <div id="intro-text">
-            <div class="intro-text-div">
-                <p class="intro-text">Ifølge Giftinformasjonen har det i år vært en økning av alvorlig
-                    forgiftning forårsaket av sopp.</p>
-                <!-- <p class="intro-text">.. har du tenkt over at en sopptur ligner ekstremsport?</p> -->
+            <div class="intro-text-div intro-text-right">
+                <p class="intro-text">Ifølge Giftinformasjonen har det i år vært en økning av alvorlig forgiftning
+                    forårsaket av sopp.</p>
             </div>
 
-            <div class="intro-text-div">
-                <p class="intro-text"> Ofte skyldes forgiftningene forveksling mellom giftig og ugiftig sopp. <br>
-                    En
-                    uskyldig kantarell kan enkelt forveksles med den giftige spiss giftslørsoppen
-                    da de ofte vokser på samme sted.</p>
+            <div class="intro-text-div intro-text-left">
+                <p class="intro-text">Ofte skyldes forgiftningene forveksling mellom giftig og ugiftig sopp. En uskyldig
+                    kantarell kan enkelt forveksles med den giftige spiss giftslørsoppen da de ofte vokser på samme
+                    sted.</p>
             </div>
 
-            <div class="intro-text-div">
-                <p class="intro-text"> Det er ingen spesifikke steder man kan unngå giftig sopp. Ifølge leder av
+            <div class="intro-text-div intro-text-right">
+                <p class="intro-text">Det er ingen spesifikke steder man kan unngå giftig sopp. Ifølge leder av
                     Soppforeningen i Halden, kommer det an på sesong og at de mest giftige soppene vokser stort sett
-                    over alt, men at de vokser i Granskog.
-                </p>
+                    over alt, men at de vokser i Granskog.</p>
             </div>
 
-            <div class="intro-text-div">
+            <div class="intro-text-div intro-text-left">
                 <p class="intro-text">Å skille mellom giftig og ikke-giftig sopp kan være vanskelig..
+                    <br>
+                    Vil du prøve?
                 </p>
             </div>
-            <div class="intro-text-div">
-                <p class="intro-text">.. men ikke umulig. Vil du prøve?
-                </p>
+        </div>
+
+        <section id="mushroom-path-section">
+            <div class="mushroom-path-intro">
+                <h2>Velkommen til soppturen!</h2>
+                <p>Følg stien og plukk den soppene du tror er trygg å spise. Kurven holder oversikt over hvor mange sopp
+                    du har plukket.</p>
             </div>
-        </div>
+
+            <div class="counter-box">
+                <img src="IMG/basket.png" alt="basket" width="200" height="200">
+                <span id="counter">0</span>
+            </div>
+
+            <div id="mushroom-path">
+                <!-- Her genereres inn sopp fra Js -->
+            </div>
+        </section>
     </section>
-
-
-    <section id="mushroom-path-section">
-        <div class="mushroom-path-intro">
-            <h2> Velkommen til soppturen!
-            </h2>
-            <p>Følg stien og plukk den soppene du tror er trygg å spise. <br> Kurven holder oversikt over
-                hvor mange sopp du har plukket. </p>
-        </div>
-
-
-        <div class="counter-box">
-            <img src="IMG/basket.png" alt="basket" width="200" height="200">
-            <span id="counter">0</span>
-        </div>
-
-        <div id="mushroom-path">
-            <!-- Her genereres inn sopp fra Js -->
-        </div>
-
-    </section>
-
-    </div>
 
     <section class="path-text-div">
-        <h2> Bra jobba! <br> tilbake hjemme fra stien kan vi endelig se hvor mange sopp som du har plukket som er giftig
-            og ikke giftig. <br>
-            la oss tømme kurven!
-        </h2>
+        <h2>Bra jobba! Tilbake hjemme fra stien kan vi endelig se hvor mange sopp som du har plukket som er giftig og
+            ikke giftig. La oss tømme kurven!</h2>
         <div id="basket">
-            <h3 id="basket-text"> </h3>
+            <h3 id="basket-text"></h3>
             <div class="basket-outer">
                 <img src="IMG/basket.png" alt="basket" id="basket-img" width="300" height="300">
                 <div id="basket-fill"></div>
@@ -87,18 +72,8 @@
         </div>
     </section>
 
-
-    <!--  <div id="score"></div> -->
-
-    <div id="mushroom-info">
-
-    </div>
-
-
-
-
-    <div id="article" class="article">
-    </div>
+    <div id="mushroom-info"></div>
+    <div id="article" class="article"></div>
 
     <script src="script.js"></script>
 </body>
