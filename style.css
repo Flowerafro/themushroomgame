@@ -1,3 +1,8 @@
+
+:root {
+    --responsive-width: min(96%, 1200px);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +23,10 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* -------------INTRO FLUESOPP----------- */
@@ -25,7 +34,7 @@ body {
     display: flex;
     justify-content: center; 
     align-items: center; 
-    width: 100%;
+    width: var(--responsive-width);
     height: 100vh;
     padding: 0 5rem;
 }
@@ -62,8 +71,9 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: var(--responsive-width);
     height: auto;
+    margin-bottom: 15rem;
 }
 
 .intro-text-div {
@@ -87,6 +97,11 @@ hr {
     text-align: left;
     padding-left: 5rem;
 }
+.intro-text-center {
+    align-self: center;
+    text-align: center;
+    padding: 5rem;
+}
 
 .intro-text-div p {
     font-size: 30px;
@@ -106,224 +121,34 @@ hr {
     transition: 0.5s;
 }
 
-/* -------------Mushroom path----------- */
-
-#mushroom-path-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #000;
-
-    width: 100%;
-    height: auto;
-
-    padding: 1rem;
-
+.intro-text-div a {
+    text-decoration: none; 
 }
 
-.mushroom-path-intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: 50vh;
-
-    padding: 1rem;
-}
-
-#mushroom-path-section h2 {
-    font-size: 40px;
-    text-align: center;
-    color: white;
-    border-bottom: 1px solid orange;
-}
-
-#mushroom-path-section p {
-    font-size: 25px;
-    text-align: center;
-    line-height: 2rem;
-    color: white;
-}
-
-.counter-box {
-    position: sticky;
-    top: 100px;
-    right: 10px;
-
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}
-
-.counter-box:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
-}
-
-.counter-box span {
-    color: white;
-    padding: 15px;
-    font-size: 50px;
-    font-weight: bold;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 10%); 
-}
-
-#mushroom-path {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1rem 13rem;
-
-    width: 100%;
-    height: 200vh;
-
-    padding: 5rem 2rem;
-}
-
-.mushroom {
-    padding: 1rem;
-}
-
-.mushroom img {
-    cursor: pointer;
-
-    width: 150px;
-    height: auto;
-    object-fit: cover;
-}
-
-.mushroom img:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(8px 8px 10px orange);
-    transition: 0.5s;
-}
-
-.path-text-div {
-    background-color: #000;
-
-    width: 100%;
-    height: auto;
-
-    padding: 1rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.path-text-div h2 {
-    width: 60%;
-    text-align: center;
+.intro-text-div a button {
     font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    
     color: white;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* ------------  BASKET  ----------- */
-
-#basket {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: auto;
-    padding: 2rem;
-}
-
-#basket h3 {
-    width: 60%;
-    color: white;
-    font-size: 25px;
-    line-height: 2rem;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-#basket-img {
+    border: 1px solid white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2); 
+    
+    width: 400px;
+    padding: 1rem;
     cursor: pointer;
 }
 
-#basket-img:hover {
+.intro-text-div a button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid white;
+    border-radius: 5px; 
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.basket-tilt {
-    animation: basket-tilt 1s ease-in-out;
-}
 
-@keyframes basket-tilt {
-    0% {
-        transform: rotate(0deg);
-    }
-    10% {
-        transform: rotate(90deg);
-    }
-    90% {
-        transform: rotate(90deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-.basket-outer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: end;
-}
-
-#basket-fill {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-}
-
-/* ---------- Mushroom info -------------- */
-
-#mushroom-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; 
-    width: 100%;
-    height: auto;
-    border: 3px solid blue;
-}
-
-.mushroom-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.mushroom-card img {
-    width: auto;
-    height: 200px;
-    object-fit: cover;
-}
 
 /* ---------- Article  -------------- */
 

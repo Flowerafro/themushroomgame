@@ -84,6 +84,7 @@ const mushroomData = [
     },
 ];
 
+
 /* Funksjon som randomiserer soppen */
 function randomizeMushrooms() {
     return mushroomData.sort(() => Math.random() - 0.5);
