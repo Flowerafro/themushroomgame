@@ -12,74 +12,98 @@
 
 <body>
     <section id="wrap-mushroom-path">
-        <section id="intro">
+        <section id="intro" class="fade-in-background">
             <h1>En tur ut i skogen kan fort
-                <hr><span>bli giftig</span>
+                <hr>
+                <span>bli giftig</span>
             </h1>
         </section>
         <section id="intro-text">
-            <div class="intro-text-div intro-text-right">
+            <div class="intro-text-div fade-background">
                 <p class="intro-text">Ifølge Giftinformasjonen har det i år vært en økning av alvorlig forgiftning
                     forårsaket av sopp.</p>
             </div>
 
-            <div class="intro-text-div intro-text-left">
+            <div class="intro-text-div fade-background">
                 <p class="intro-text">Ofte skyldes forgiftningene forveksling mellom giftig og ugiftig sopp. En uskyldig
                     kantarell kan enkelt forveksles med den giftige spiss giftslørsoppen da de ofte vokser på samme
                     sted.</p>
             </div>
 
-            <div class="intro-text-div intro-text-right">
+            <div class="intro-text-div fade-background">
                 <p class="intro-text">Det er ingen spesifikke steder man kan unngå giftig sopp. Ifølge leder av
                     Soppforeningen i Halden, kommer det an på sesong og at de mest giftige soppene vokser stort sett
                     over alt, men at de vokser i Granskog.</p>
             </div>
 
-            <div class="intro-text-div intro-text-left">
+            <div class="intro-text-div fade-background">
                 <p class="intro-text">Å skille mellom giftig og ikke-giftig sopp kan være vanskelig..
                 </p>
             </div>
 
-            <div class="intro-text-div intro-text-center">
-                <a href="/#mushroom-path-section"><button>Vil du prøve?</button>
+            <div class="intro-text-div fade-out-background">
+                <a href="/#forest-break"><button>Trykk her for å prøve</button>
                 </a>
             </div>
         </section>
 
-        <section id="mushroom-path-section">
-            <div class="mushroom-path-intro">
-                <p>Følg stien nedover og klikk på soppen du tror er trygg å spise. Telleren holder oversikt over
-                    hvor
-                    mange
-                    sopp du har plukket.</p>
-                <p>Når du har plukket den soppen du tror er trygg forlater vi stien og sjekker innholdet i kurven.</p>
-            </div>
-
-            <section id="mushroom-game">
-                <div class="counter-box">
-                    <p>Ant sopp: <span id="counter">0</span></p>
-                </div>
-                <div id="mushroom-path">
-                    <!-- Her genereres inn sopp fra Js -->
-                </div>
-            </section>
-
+        <section id="forest-break">
         </section>
     </section>
 
-    <section class="path-text-div">
-        <h2>Bra jobba! Tilbake hjemme fra stien kan vi endelig se hvor mange sopp som du har plukket som er giftig og
-            ikke giftig. La oss tømme kurven!</h2>
-        <div id="basket">
-            <h3 id="basket-text"></h3>
-            <div class="basket-outer">
-                <img src="IMG/basket.png" alt="basket" id="basket-img" width="300" height="300">
-                <div id="basket-fill"></div>
-            </div>
+    <section id="mushroom-path-section">
+        <div class="mushroom-path-intro">
+            <p class="mushroom-path-text">Følg stien nedover og klikk på soppen du tror er trygg å spise.
+                Telleren holder oversikt over
+                hvor
+                mange
+                sopp du har plukket.</p>
+            <p class="mushroom-path-text">Når du har plukket den soppen du tror er trygg forlater vi stien og
+                sjekker innholdet i kurven.</p>
         </div>
+
+        <section id="mushroom-game" class="fade-out-background-strong">
+            <div class="counter-box">
+                <p>Ant sopp: <span class="counter">0</span></p>
+            </div>
+            <div id="mushroom-path">
+                <!-- Her genereres inn sopp fra Js -->
+            </div>
+        </section>
+        <section class="home-break">
+        </section>
     </section>
 
-    <div id="mushroom-info"></div>
+
+    <section id="home">
+        <div class="home-section">
+            <p class="mushroom-path-text">Bra jobba! Tilbake hjemme fra stien kan vi endelig se hvor mange
+                sopp som du har plukket som er
+                giftig
+                og
+                ikke giftig.</p>
+        </div>
+        <div id="basket-section" class="fade-out-background-strong">
+            <div class="counter-box">
+                <p>Ant sopp: <span class="counter">0</span></p>
+            </div>
+            <p id="basket-text"> La oss se i kurven din</p>
+            <div id="basket">
+                <div class="basket-outer">
+                    <img src="IMG/basket.png" alt="basket" id="basket-img" width="300" height="300">
+                    <div id="basket-fill"></div>
+                </div>
+            </div>
+        </div>
+        <section class="mushroom-break"></section>
+    </section>
+
+    <section id="info-section">
+        <div id="mushroom-info"></div>
+    </section>
+
+
+
     <div id="article" class="article"></div>
 
     <script src="script.js"></script>

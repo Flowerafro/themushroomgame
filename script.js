@@ -1,11 +1,14 @@
 const intro = document.getElementById("wrap-intro");
-const counter = document.getElementById("counter");
+const counter = document.querySelectorAll(".counter");
 const mushroomPath = document.getElementById("mushroom-path");
 
 const basket = document.getElementById("basket");
 const basketimg = document.getElementById("basket-img");
 const basketfill = document.getElementById("basket-fill");
 const baskettext = document.getElementById("basket-text");
+
+const basketButton = document.getElementById("les-mer");
+
 const mushroomInfo = document.getElementById("mushroom-info");
 const article = document.getElementById("article");
 
@@ -117,7 +120,7 @@ function generateMushroomElements() {
                 type: mushroom.type,
                 content: mushroom.innerHTML
             });
-            counter.innerHTML = basketContent.length; /* teller antall sopp du har plukket */
+            counter.forEach(count => count.innerHTML = basketContent.length); /* teller antall sopp du har plukket */
             mushroom.style.display = 'none';
             console.log(basketContent);
         });
@@ -153,7 +156,8 @@ basket.addEventListener('click', () => {
         });
 
         mushroomInfo.innerHTML = getMushroomData(basketContent).map(mushroom => {
-            return `<div class="mushroom">
+            return `
+            <div class="mushroom">
                 <img src="${mushroom.src}" alt="${mushroom.alt}">
                 <h3>${mushroom.name}</h3>
                 <p>${mushroom.info}</p>
@@ -167,16 +171,6 @@ basket.addEventListener('click', () => {
             mushroom.classList.remove('mushroom');
             mushroom.classList.add('mushroom-card');
         });
-
-        /* article.innerHTML = `<h2>Artikkel tittel</h2>
-        <h3>undertittel</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam asperiores inventore laudantium molestias
-            cupiditate ullam labore accusamus, eum enim assumenda, reiciendis mollitia tempora ratione incidunt
-            suscipit ofte distinctio dolorum quia esse facilis? Dolore necessitatibus nobis soluta inventore facere
-            consequuntur nam adipisci sunt quisquam iure modi, assumenda earum sit eius minus!</p>`;
-        article.classList.add('article'); */
-
-        /* displayMushroomData(); */
 
         displayScore();
 
@@ -197,11 +191,10 @@ function displayScore() {
     });
     // if else som bestemmer om basket-text skal vise om du kan spise soppen eller ikke
     if (poisonCount > 0) {
-        baskettext.innerHTML = `<p>Å nei, du må kaste alt! <br> Når du har giftig sopp i kurven din, kan du ikke spise noen har de du har plukket..</p>
-        <p>Du har plukket ${poisonCount} giftige sopp og ${notPoisonCount} ikke-giftig sopp</p>`;
+        baskettext.innerHTML = `<p>Du har plukket ${poisonCount} giftige sopp og selv om du plukket ${notPoisonCount} gift-fri sopp, må alt kastet fordi de har vært i samme kurv :(</p>
+        Les mer om soppen under!</p>`;
     } else {
-        baskettext.innerHTML = `<p>Gratulerer! Du har plukket gift-fri sopp og kan spise den!</p
-        <p>Du har plukket ${poisonCount} giftige sopp og ${notPoisonCount} ikke-giftig sopp</p>`;
+        baskettext.innerHTML = `<p>Gratulerer! Du har plukket ${notPoisonCount} gift-fri sopp og kan spise med god samvittighet! Les mer om soppen under</p>`;
     }
 }
 

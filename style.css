@@ -16,10 +16,14 @@
 
 html {
     scroll-behavior: smooth;
+   
+   
 }
 
 body {
     font-family: roboto, sans-serif;
+    overscroll-behavior: none;
+   
 }
 
 #wrap-mushroom-path {
@@ -51,15 +55,14 @@ body {
     letter-spacing: 1px;
     text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5); 
+    //background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px);
+    
     margin: 0;
     padding: 0.5rem;
-    width: 60%;
+    width: 70%;
 } 
 
- hr {
-    border: var(--green-underline);
-}
 
 #intro span {
     font-size: 65px;
@@ -69,6 +72,7 @@ body {
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     color: white;
+    border-top: 1px solid var(--green-underline);
     margin: 0;
 }
 
@@ -81,47 +85,51 @@ body {
     margin-bottom: 15rem;
 }
 
+.fade-in-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5));
+}
+
+.fade-background {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fade-out-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0));
+}
+
+.fade-out-background-strong {
+    background-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0));
+}
+
 .intro-text-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0;
+    align-items: center;
+    text-align: center;
+    margin: 0 ;
     padding: 0;
+    
     width: 100%;
     height: 100vh;
 }
 
-.intro-text-right {
-    align-self: flex-end;
-    text-align: right;
-}
-
-.intro-text-left {
-    align-self: flex-start;
-    text-align: left;
-}
-.intro-text-center {
-    align-self: center;
-    text-align: center;
-}
-
-.intro-text-div p {
+.intro-text {
+    width: 60%;
     font-size: 30px;
     color: white;
-    padding: 2rem;
     letter-spacing: 1px;
     line-height: 3rem;
     font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    //background-color: rgba(0, 0, 0, 0.7);
 }
 
-.intro-text-div p:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid white;
+.intro-text:hover {
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px; 
-    transform: scale(1.1);
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .intro-text-div a {
@@ -153,21 +161,97 @@ body {
 }
 
 
+/* ------------- png breaks - overgang fra parallax til text bokser ----------- */
 
-/* ---------- Article  -------------- */
+#forest-break {
+    background-image: url(IMG/tree-silouette.png);
+    background-attachment: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-.article {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
-    background-color: grey;
+    width: 100%;
+    height: 500px;
+}
+
+.home-break {
+    background-image: url(IMG/home.png);
+    background-attachment: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height: 600px;
+    margin-bottom: -5px; 
+}
+
+.mushroom-break {
+    background-image: url(IMG/mushrooms.png);
+    bbackground-attachment: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height: 600px;
+}
+    
+
+
+/* ---------- Section: mushroom info -------------- */
+
+#info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     width: 100%;
     height: auto;
+
+    background-color: #000;
 }
 
-.article p {
-    width: 80%;
+#mushroom-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    width: var(--responsive-width);
+    height: auto;
+
+    padding: 2rem;
 }
+
+
+/* Artikkelkort om hver sopp*/
+.mushroom-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mushroom-card:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.mushroom-card img {
+    width: auto;
+    height: 200px;
+    object-fit: cover;
+}
+
+
