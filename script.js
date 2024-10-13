@@ -1,6 +1,6 @@
 const intro = document.getElementById("wrap-intro");
 const counter = document.getElementById("counter");
-const mushroomPath = document.getElementById("mushroom-path-section");
+const mushroomPath = document.getElementById("mushroom-path");
 
 const basket = document.getElementById("basket");
 const basketimg = document.getElementById("basket-img");
@@ -139,8 +139,8 @@ basket.addEventListener('click', () => {
         alert('ops! Ser ut som at du må tilbake til skogs og plukke sopp før vi kan sjekke kurven din!');
         return;
     } else {
-        intro.style.display = 'none';
-        mushroomPath.style.display = 'none';
+        /* intro.style.display = 'none';
+        mushroomPath.style.display = 'none'; */
 
         basketimg.classList.add('basket-tilt');
         basketfill.innerHTML = '';
