@@ -10,7 +10,7 @@
     --beige: #F5F5DC;
     --dark-red: #8B0000;
     --cream: #FFFDD0;
-    --dark-gray: #2F4F4F;
+    --dark-gray-green: #2F4F4F;
 }
 
 * {
@@ -69,6 +69,12 @@ body {
     justify-content: flex-start;
 }
 
+.flex-space-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .flex-row-center-center {
     display: flex;
     flex-direction: row;
@@ -123,7 +129,7 @@ body {
 } 
 
 hr {
-    border: 1px solid var(--dark-green);
+    border: 1px solid var(--dark-gray-green);
     margin: 1rem 0;
 }
 
@@ -134,7 +140,7 @@ hr {
     letter-spacing: 2px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: var(--cream);
+    color: white;
     margin: 0;
 }
 
@@ -154,7 +160,7 @@ hr {
 .intro-text {
     width: 60%;
     font-size: 30px;
-    color: var(--cream);
+    color: white;
     letter-spacing: 1px;
     line-height: 3rem;
     font-weight: bold; 
@@ -181,7 +187,7 @@ hr {
 .info-section {
     width: 100%;
     height: auto;
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray-green);
 }
 
 #mushroom-info {
@@ -199,7 +205,8 @@ hr {
     padding: 10px;
     margin: 10px;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     background-color: var(--cream);
 
@@ -214,8 +221,8 @@ hr {
 }
 
 .mushroom-card img {
-    width: auto;
-    height: 200px;
+    width: 200px;
+    height: auto;
     object-fit: cover;
 }
 
@@ -229,7 +236,7 @@ hr {
 
 .mushroom-card h4 {
     font-size: 20px;
-    color: var(--dark-gray);
+    color: var(--dark-gray-green);
     text-align: center;
     margin: 0;
     padding: 0;
@@ -237,8 +244,9 @@ hr {
 
 .mushroom-card p {
     font-size: 15px;
+    font-family: 'arial';
     color: var(--dark-red);
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    text-align: left;
+    margin: 1rem;
+    padding: 1rem;
 }

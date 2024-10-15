@@ -24,66 +24,66 @@ let notPoisonCount = 0;
 const mushroomData = [
     {
         id: 1,
-        type: "poison",
-        src: "IMG/fluesopp.png",
-        name: "Fluesopp",
-        info: "info om fluesopp",
+        type: "Giftig",
+        src: "IMG/rodfluesopp.png",
+        name: "Rød fluesopp",
+        info: "Amanita muscaria, er en stilksporesopp av slekten Amanita. Navnet kommer fra dens bruk som insektmiddel. Rød fluesopp er giftig og gir sterke magesmerter og brekninger, og kan dessuten gi hallusinasjoner. Den inneholder ibotensyre, muskimol og muskazon, som aktive prinsipp. ",
         alt: "fluesopp"
     },
     {
         id: 2,
-        type: "poison",
+        type: "Giftig",
         src: "IMG/hvitfluesopp.png",
         name: "Hvit fluesopp",
-        info: "info om hvit fluesopp",
+        info: "Amanita virosa, er en av de farligste av våre giftige sopper. Hvit fluesopp inneholder gift som angriper lever og nyrer. Hvit fluesopp kan forveksles med hvite sjampinjonger; men sjampinjonger har mørke sporer som gjør at skivene blir grårosa til svartbrune. ",
         alt: "hvitfluesopp"
     },
     {
         id: 3,
-        type: "poison",
+        type: "Giftig",
         src: "IMG/spissgiftslorsopp.png",
         name: "Spiss Giftslørsopp",
-        info: "info om hvit spillslørsopp",
+        info: "Cortinarius rubellus,er en sopp som hører til slekten slørsopper. Den er dødelig giftig og angriper nyrene. Forgiftningssymptomene kommer ofte etter 2–3 dager eller mer. ",
         alt: "spissgiftslorsopp"
     },
     {
         id: 4,
-        type: "poison",
+        type: "Giftig",
         src: "IMG/flatklokkehatt.png",
         name: "Flatklokkehatt",
-        info: "info om hvit flatklokkehatt",
+        info: "Galerina marginata, er en brun giftsopp som er vanlig i hele landet. Den gir hovedsakelig leverskade og kan være dødelig. ",
         alt: "flatklokkehatt"
     },
     {
         id: 5,
-        type: "notpoison",
+        type: "Ikke-giftig",
         src: "IMG/steinsopp.png",
         name: "Steinsopp",
-        info: "info om hvit steinsopp",
+        info: "Boletus edulis, tilhører rørsoppfamilien og regnes som som en av de beste matsoppene. Steinsopp vokser i løv- og barskog, og har sesong i Norge fra juni til september.  ",
         alt: "steinsopp"
     },
     {
         id: 6,
-        type: "notpoison",
+        type: "Ikke-giftig",
         src: "IMG/kantarell.png",
-        name: "kantarell",
-        info: "info om kantarell",
+        name: "Kantarell",
+        info: "Cantharellus cibarius, er en av Norges beste og mest gjenkjennelige matsopper. Den vokser i hele landet og har lang sesong.",
         alt: "kantarell"
     },
     {
         id: 7,
-        type: "notpoison",
+        type: "Ikke-giftig",
         src: "IMG/ametystsopp.png",
         name: "Ametystsopp",
-        info: "info om ametystsopp",
+        info: "Lakssopp eller Laccaria amethystina, Lakssopp er oftest lakserøde til rødfiolette små sopper med tynn stilk og tykke, voksaktige skiver. ",
         alt: "ametystsopp"
     },
     {
         id: 8,
-        type: "notpoison",
-        src: "IMG/fungi.png",
-        name: "Matsopp",
-        info: "info om matsopp",
+        type: "Ikke-giftig",
+        src: "IMG/matpiggsopp.png",
+        name: "Matpiggsopp",
+        info: "Hydnum repandum, er hattsopper som danner sporer på et piggete hymenofor. Matpiggsoppene er, som navnet forteller, gode matsopper. ",
         alt: "mat-sopp"
     },
 ];
@@ -172,6 +172,9 @@ basket.addEventListener('click', () => {
             </div>`;
         }).join('');
 
+        baskettext.classList.remove('flex-row-center-center')
+        baskettext.classList.add('flex-col-center-center');
+
         /* Fjerner gammel klasse og legger til ny */
         const mushroomElements = mushroomInfo.querySelectorAll('.mushroom');
         mushroomElements.forEach(mushroom => {
@@ -190,9 +193,9 @@ function displayScore() {
     notPoisonCount = 0;
 
     basketContent.map(mushroom => {
-        if (mushroom.type === 'poison') {
+        if (mushroom.type === 'Giftig') {
             poisonCount++;
-        } else if (mushroom.type === 'notpoison') {
+        } else if (mushroom.type === 'Ikke-giftig') {
             notPoisonCount++;
         }
     });
@@ -205,3 +208,17 @@ function displayScore() {
         <button><a href="#info-section">Les mer om soppen du plukket her</a></button>`;
     }
 }
+
+/* KILDER til SOPP-array: 
+
+https://soppognyttevekster.no/sopp/normlisten/ 
+https://no.wikipedia.org/wiki/R%C3%B8d_fluesopp
+https://snl.no/hvit_fluesopp
+https://snl.no/flatklokkehatt
+https://no.wikipedia.org/wiki/Steinsopp
+https://snl.no/steinsopp
+https://soppognyttevekster.no/normlisten/kantarell/
+https://snl.no/kantarell
+https://snl.no/matpiggsopper
+
+ */

@@ -10,7 +10,7 @@
     --beige: #F5F5DC;
     --dark-red: #8B0000;
     --cream: #FFFDD0;
-    --dark-gray: #2F4F4F;
+    --dark-gray-green: #2F4F4F;
 }
 
 /* ------------- mini sopp-spill ----------- */
@@ -44,7 +44,7 @@
 .mushroom-path-text {
     font-size: 30px;
     line-height: 3rem;
-    color: var(--cream);
+    color: white;
     padding: 1rem;
     width: 50%;
 }
@@ -65,15 +65,13 @@
     padding: 1rem;
     border: 2px solid var(--cream);
     border-radius: 5px;
-
-    font-family: 'Press Start 2P', cursive;
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray-green);
 }
 
 .counter-box p {
     font-size: 20px;
     margin: 0;
-    color: var(--cream); 
+    color: white; 
 }
 
 .counter-box span {
@@ -142,23 +140,33 @@
 }
 
 #basket-text {
+    border: 2px solid var(--light-green);
+    border-radius: 5px;
+    background-color: var(--dark-gray-green);
+    width: 50%;
+    
+    padding: 1rem;
+    margin: 2rem;
+    
+}
+#basket-text span {
+    width: 20%;
+    font-size: 80px;
+    font-weight: bold;
+    
+    color: var(--light-green);
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+#basket-text p {
+    width: 80%;
     font-size: 25px;
     color: var(--cream);
     letter-spacing: 1px;
     line-height: 3rem;
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--light-green);
-    background-color: var(--dark-gray);
-    border-radius: 5px;
-    padding: 2rem;
-    margin-left: 2rem;
-    width: 50%;
-}
-
-#basket-text span {
-    font-weight: bold;
-    color: var(--light-green);
 }
 
 #basket-img {
@@ -211,7 +219,7 @@
 
 #basket-text button:hover {
     background-color: var(--light-green);
-    color: var(--dark-gray);
+    color: var(--dark-gray-green);
     transform: scale(1.05);
 }
 
@@ -239,7 +247,7 @@
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray-green);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
