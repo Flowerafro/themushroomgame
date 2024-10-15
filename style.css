@@ -75,7 +75,6 @@ body {
 
 /* ------------- INTRO Background image  ----------- */
 
-
 #wrap-mushroom-path {
     background-image: url(IMG/aviewforest.jpg);
     background-attachment: fixed;
@@ -156,45 +155,10 @@ body {
     letter-spacing: 1px;
     line-height: 3rem;
     font-weight: bold; 
-    padding: 1rem;
+    padding: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    //background-color: rgba(0, 0, 0, 0.7);
-}
-
-.intro-text:hover {
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 5px; 
-    transition: 0.4s;
 }
-
-.intro-text-div a {
-    text-decoration: none; 
-}
-
-.intro-text-div a button {
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    
-    color: white;
-    border: 1px solid white; 
-    border-radius: 5px; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.2); 
-    
-    width: 400px;
-    padding: 1rem;
-    cursor: pointer;
-}
-
-.intro-text-div a button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid green; 
-    border-radius: 5px; 
-    transform: scale(1.1);
-    transition: 0.8s;
-}
-
 
 /* ------------- png breaks - overgang fra parallax til text bokser ----------- */
 
@@ -232,14 +196,11 @@ body {
     height: 600px;
 }
     
-
-
 /* ---------- Section: mushroom info -------------- */
 
 #info-section {
     width: 100%;
     height: auto;
-
     background-color: #000;
 }
 
@@ -247,7 +208,6 @@ body {
     flex-wrap: wrap; 
     width: var(--responsive-width);
     height: auto;
-
     padding: 2rem;
 }
 
