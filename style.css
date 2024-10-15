@@ -1,9 +1,16 @@
-
 :root {
     --responsive-width: min(96%, 1400px);
 
     --100vh: 100vh;
     --50vh: 50vh;
+
+    --dark-green: #2E8B57;
+    --light-green: #98FB98;
+    --brown: #8B4513;
+    --beige: #F5F5DC;
+    --dark-red: #8B0000;
+    --cream: #FFFDD0;
+    --dark-gray: #2F4F4F;
 }
 
 * {
@@ -14,15 +21,15 @@
 
 html {
     scroll-behavior: smooth;
-   
-   
 }
 
 body {
-    font-family: roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
     overscroll-behavior: none;
-   
+    background-color: #000;
+    color: var(--cream);
 }
+
 /* ------------ FLEX RULES ----------- */
 
 .flex-row-jus {
@@ -111,10 +118,14 @@ body {
     
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0;
-    padding: 0.5rem;
+    padding: 1rem;
     width: 70%;
 } 
 
+hr {
+    border: 1px solid var(--dark-green);
+    margin: 1rem 0;
+}
 
 #intro span {
     font-size: 65px;
@@ -123,21 +134,18 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: white;
-    border-top: 1px solid var(--green-underline);
+    color: var(--cream);
     margin: 0;
 }
 
-#intro-text {
+#intro-textbox {
     width: var(--responsive-width);
     height: auto;
-    margin-bottom: 15rem;
 }
-
 
 .intro-text-div {
     text-align: center;
-    margin: 0 ;
+    margin: 0;
     padding: 0;
     width: 100%;
     height: 100vh;
@@ -146,7 +154,7 @@ body {
 .intro-text {
     width: 60%;
     font-size: 30px;
-    color: white;
+    color: var(--cream);
     letter-spacing: 1px;
     line-height: 3rem;
     font-weight: bold; 
@@ -165,29 +173,6 @@ body {
     background-size: cover;
 
     width: 100%;
-    height: 500px;
-}
-
-.home-break {
-    background-image: url(IMG/home.png);
-    background-attachment: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 100%;
-    height: 600px;
-    margin-bottom: -5px; 
-}
-
-.mushroom-break {
-    background-image: url(IMG/mushrooms.png);
-    bbackground-attachment: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 100%;
     height: 600px;
 }
     
@@ -196,7 +181,7 @@ body {
 #info-section {
     width: 100%;
     height: auto;
-    background-color: #000;
+    background-color: var(--dark-gray);
 }
 
 #mushroom-info {
@@ -206,16 +191,15 @@ body {
     padding: 2rem;
 }
 
-
-/* Artikkelkort om hver sopp*/
+/* Artikkelkort om hver sopp */
 .mushroom-card {
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-green);
     padding: 10px;
     margin: 10px;
     width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--cream);
 
     display: flex;
     flex-direction: column;
@@ -233,11 +217,26 @@ body {
     object-fit: cover;
 }
 
+.mushroom-card h3 {
+    font-size: 20px;
+    color: var(--dark-green);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
-#article {
-    width: 100%;
-    height: auto;
-    padding: 2rem;
-    background-color: #000;
-    color: white;
+.mushroom-card h4 {
+    font-size: 20px;
+    color: var(--dark-gray);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.mushroom-card p {
+    font-size: 15px;
+    color: var(--dark-red);
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }

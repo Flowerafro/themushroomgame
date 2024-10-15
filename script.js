@@ -104,7 +104,6 @@ function generateMushroomElements() {
         mushroomImg.id = mushroom.id;
         mushroomImg.type = mushroom.type;
 
-
         mushroomImg.innerHTML = `<img src="${mushroom.src}" alt="${mushroom.alt}">`;
         mushroomParent.appendChild(mushroomImg);
     });
@@ -123,6 +122,12 @@ function generateMushroomElements() {
             counter.forEach(count => count.innerHTML = basketContent.length); /* teller antall sopp du har plukket */
             mushroom.style.display = 'none';
             console.log(basketContent);
+
+            // Check if all mushrooms are picked
+            if (basketContent.length === mushroomData.length) {
+                alert('Alle soppen er plukket, gå videre til kurven');
+                window.location.href = "#basket-section";
+            }
         });
     });
 }
@@ -160,8 +165,8 @@ basket.addEventListener('click', () => {
             <div class="mushroom">
                 <img src="${mushroom.src}" alt="${mushroom.alt}">
                 <h3>${mushroom.name}</h3>
+                <h4>${mushroom.type}</h4>
                 <p>${mushroom.info}</p>
-                <p>${mushroom.type}</p>
             </div>`;
         }).join('');
 
@@ -192,9 +197,9 @@ function displayScore() {
     // if else som bestemmer om basket-text skal vise om du kan spise soppen eller ikke
     if (poisonCount > 0) {
         baskettext.innerHTML = `<p>Du har plukket ${poisonCount} giftige sopp og selv om du plukket ${notPoisonCount} gift-fri sopp, må alt kastet fordi de har vært i samme kurv :(</p>
-        Les mer om soppen du har plukket under!</p>`;
+        <button><a href="#info-section">Les mer om soppen du plukket her</a></button>`;
     } else {
-        baskettext.innerHTML = `<p>Gratulerer! Du har plukket ${notPoisonCount} gift-fri sopp og kan spise med god samvittighet! Les mer om soppen du har plukket under under</p>`;
+        baskettext.innerHTML = `<p>Gratulerer! Du har plukket ${notPoisonCount} gift-fri sopp og kan spise med god samvittighet! Les mer om soppen du har plukket under under</p> 
+        <button><a href="#info-section">Les mer om soppen du plukket her</a></button>`;
     }
 }
-
