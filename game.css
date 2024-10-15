@@ -20,20 +20,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     width: 100%;
     height: auto;
 }
 
 
 .mushroom-path-intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: var(--50vh);
 
@@ -53,7 +45,6 @@
 
 .mushroom-path-text {
     font-size: 30px;
-    
     line-height: 3rem;
     color: white;
     padding: 1rem;
@@ -67,10 +58,6 @@
 .counter-box {
     position: sticky;
     top: 0;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     width: 200px;
 
     font-family: 'Press Start 2P', cursive;
@@ -102,19 +89,14 @@
 /* ------------- selve spilllayouten ----------- */
 
 #mushroom-game {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
     width: 100%;
-
     padding-top: 10rem;
 }
 
 #mushroom-path {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 5rem 4rem;
 
     margin: 0 auto;
@@ -181,10 +163,6 @@
 }
 
 .home-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: var(--50vh);
 
@@ -269,22 +247,11 @@
 }
 
 .basket-outer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
     width: 100%;
     height: auto;
 }
 
 #basket-fill {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-
     width: 70%;
     height: auto;
 }
