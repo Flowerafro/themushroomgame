@@ -97,8 +97,8 @@ body {
     letter-spacing: 1px;
     text-align: center;
     color: white;
-    backdrop-filter: blur(5px);
     
+    background-color: rgba(0, 0, 0, 0.5);
     margin: 0;
     padding: 0.5rem;
     width: 70%;
@@ -238,3 +238,10 @@ body {
 }
 
 
+#article {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    background-color: #000;
+    color: white;
+}

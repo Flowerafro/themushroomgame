@@ -27,7 +27,7 @@
 
 .mushroom-path-intro {
     width: 100%;
-    height: var(--50vh);
+    height: auto;
 
     border-radius: 5px; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -151,11 +151,7 @@
 /* ------------  HOME  ----------- */
 
 #home {
-    background-image: url(IMG/cosykitchen.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #000;
 
     display: flex;
     flex-direction: column;
@@ -185,10 +181,10 @@
 #basket-section {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 
     width: 100%;
-    height: 100vh;
+    height: auto;
 }
 
 #basket {
@@ -197,10 +193,10 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 
-    padding-top: 10rem;
+    border: red 3px solid;
 
 }
 
