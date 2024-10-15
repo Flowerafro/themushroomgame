@@ -9,6 +9,7 @@ const baskettext = document.getElementById("basket-text");
 
 const basketButton = document.getElementById("les-mer");
 
+const infoSection = document.getElementById("info-section");
 const mushroomInfo = document.getElementById("mushroom-info");
 const article = document.getElementById("article");
 
@@ -160,6 +161,7 @@ basket.addEventListener('click', () => {
                     basketfill.appendChild(mushroomDiv);
                 }); */
 
+        infoSection.classList.add('info-section');
         mushroomInfo.innerHTML = getMushroomData(basketContent).map(mushroom => {
             return `
             <div class="mushroom">

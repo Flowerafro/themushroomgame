@@ -178,15 +178,17 @@ hr {
     
 /* ---------- Section: mushroom info -------------- */
 
-#info-section {
+.info-section {
     width: 100%;
     height: auto;
     background-color: var(--dark-gray);
 }
 
 #mushroom-info {
-    flex-wrap: wrap; 
-    width: var(--responsive-width);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: var(--responsive-width);
     height: auto;
     padding: 2rem;
 }
@@ -196,7 +198,7 @@ hr {
     border: 1px solid var(--light-green);
     padding: 10px;
     margin: 10px;
-    width: 300px;
+    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background-color: var(--cream);
