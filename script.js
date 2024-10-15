@@ -144,16 +144,16 @@ basket.addEventListener('click', () => {
     } else {
         /* intro.style.display = 'none';
         mushroomPath.style.display = 'none'; */
-
-        basketimg.classList.add('basket-tilt');
-        basketfill.innerHTML = '';
-
-        basketContent.map(item => {
-            const mushroomDiv = document.createElement('div');
-            mushroomDiv.className = 'mushroom';
-            mushroomDiv.innerHTML = item.content;
-            basketfill.appendChild(mushroomDiv);
-        });
+        /* 
+                basketimg.classList.add('basket-tilt');
+                basketfill.innerHTML = '';
+        
+                basketContent.map(item => {
+                    const mushroomDiv = document.createElement('div');
+                    mushroomDiv.className = 'mushroom';
+                    mushroomDiv.innerHTML = item.content;
+                    basketfill.appendChild(mushroomDiv);
+                }); */
 
         mushroomInfo.innerHTML = getMushroomData(basketContent).map(mushroom => {
             return `
@@ -192,9 +192,9 @@ function displayScore() {
     // if else som bestemmer om basket-text skal vise om du kan spise soppen eller ikke
     if (poisonCount > 0) {
         baskettext.innerHTML = `<p>Du har plukket ${poisonCount} giftige sopp og selv om du plukket ${notPoisonCount} gift-fri sopp, må alt kastet fordi de har vært i samme kurv :(</p>
-        Les mer om soppen under!</p>`;
+        Les mer om soppen du har plukket under!</p>`;
     } else {
-        baskettext.innerHTML = `<p>Gratulerer! Du har plukket ${notPoisonCount} gift-fri sopp og kan spise med god samvittighet! Les mer om soppen under</p>`;
+        baskettext.innerHTML = `<p>Gratulerer! Du har plukket ${notPoisonCount} gift-fri sopp og kan spise med god samvittighet! Les mer om soppen du har plukket under under</p>`;
     }
 }
 
